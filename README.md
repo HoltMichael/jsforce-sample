@@ -1,7 +1,7 @@
 # jsforce-sample
 
-# THIS IS A COPY OF JOSH BIRK'S JSFORCE SAMPLE FOUND AT https://github.com/jsforce/jsforce
-# This quickly hacked together example uses oauth2, rather than the username/password config file in Josh's example.
+**THIS IS A COPY OF JOSH BIRK'S JSFORCE SAMPLE FOUND AT https://github.com/jsforce/jsforce**
+**This quickly hacked together example uses oauth2, rather than the username/password config file in Josh's example.**
 
 To use this sample, first create a Connected App in Salesforce and get the Client ID (Consumer Key) and Client Secret (Consumer Secret). 
 Set the oauth scopes to:

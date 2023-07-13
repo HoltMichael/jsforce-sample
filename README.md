@@ -1,5 +1,31 @@
 # jsforce-sample
 
+# THIS IS A COPY OF JOSH BIRK'S JSFORCE SAMPLE FOUND AT https://github.com/jsforce/jsforce
+# This quickly hacked together example uses oauth2, rather than the username/password config file in Josh's example.
+
+To use this sample, first create a Connected App in Salesforce and get the Client ID (Consumer Key) and Client Secret (Consumer Secret). 
+Set the oauth scopes to:
+Full access (full)
+Perform requests at any time (refresh_token, offline_access)
+
+Set the Callback URL to login.salesforce.com
+Then go to:
+https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=<!!Consumer Key!!>&redirect_uri=https://login.salesforce.com
+
+Get the code from the URL and decode, eg. here: https://www.urldecoder.org/
+
+Get an access token and refresh token, using the following in eg. Postman:
+POST https://login.salesforce.com/services/oauth2/token?
+grant_type: Authorization Code 
+client_id: [Connected App Consumer Key]
+client_secret: [Connected App Consumer Secret]
+code: [decoded code]
+redirect_uri: https://login.salesforce.com/
+
+Hit send and the response will return an access_token and refresh_token param. Paste them into index.js, along with the clientId, ClientSecret and instance URL.
+
+
+# Josh's description below
 This is a simple interactive demonstration of how to use Salesforce with Node.js via a library called jsforce.  jsforce can be run via command line or used with server side solutions like express.
 
 Node is required, obviously: https://nodejs.org/en/
